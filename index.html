@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Estratégico de Captación</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#f4f6f9;
+  padding:40px;
+}
+
+.container {
+  max-width:800px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+  margin-top:0;
+}
+
+label {
+  font-weight:bold;
+  display:block;
+  margin-top:15px;
+}
+
+input, select {
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+button {
+  margin-top:20px;
+  padding:12px;
+  width:100%;
+  background:#1a73e8;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover {
+  background:#1557b0;
+}
+
+.result {
+  margin-top:25px;
+  background:#eef3ff;
+  padding:20px;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sistema Estratégico de Captación 2026</h1>
+
+<label>Vacante</label>
+<select id="vacante">
+  <option value="Tecnicos">Técnicos</option>
+  <option value="Ayudantes_MTY">Ayudantes MTY</option>
+  <option value="Repack">Repack</option>
+</select>
+
+<label>Requerimiento mensual</label>
+<input type="number" id="requerimiento">
+
+<label>Mes</label>
+<select id="mes">
+  <option>Enero</option>
+  <option>Febrero</option>
+  <option>Marzo</option>
+  <option>Abril</option>
+  <option>Mayo</option>
+  <option>Junio</option>
+  <option>Julio</option>
+  <option>Agosto</option>
+  <option>Septiembre</option>
+  <option>Octubre</option>
+  <option>Noviembre</option>
+  <option>Diciembre</option>
+</select>
+
+<label>Modo estratégico</label>
+<select id="modo" onchange="toggleReclutadores()">
+  <option value="Humano">Humano</option>
+  <option value="IA">IA</option>
+  <option value="Mixto">Mixto</option>
+</select>
+
+<label>Reclutadores disponibles</label>
+<input type="number" id="reclutadores" value="10">
+
+<button onclick="generar()">Generar estrategia</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+<script>
+
+function toggleReclutadores() {
+  const modo = document.getElementById("modo").value;
+  const campo = document.getElementById("reclutadores");
+
+  if (modo === "IA") {
+    campo.disabled = true;
+    campo.style.opacity = 0.5;
+  } else {
+    campo.disabled = false;
+    campo.style.opacity = 1;
+  }
+}
+
+function generar() {
+  document.getElementById("resultado").innerHTML =
+    "Backend aún no conectado. Próximo paso: conectar motor estratégico.";
+}
+
+</script>
+
+</body>
+</html>
