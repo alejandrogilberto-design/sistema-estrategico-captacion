@@ -238,7 +238,7 @@ async function generarPlan(){
     reclutadores: Number(document.getElementById("reclutadores").value)
   };
 
-  const response = await fetch("https://TU_WORKER_AQUI.workers.dev",{
+  const response = await fetch("https://motor-estrategico-captacion.alejandrogilberto.workers.dev/",{
     method:"POST",
     headers:{ "Content-Type":"application/json"},
     body: JSON.stringify(data)
